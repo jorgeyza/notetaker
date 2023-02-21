@@ -6,11 +6,11 @@ I used Supabase as the database(postgreSQL) and registered two GitHub OAuth appl
 
 ## Envs
 
-DATABASE_URL => A supabase database url
-NEXTAUTH_SECRET => A random string (only needed for "production" environment)
-NEXTAUTH_URL => http://localhost:3000
-GITHUB_CLIENT_ID => You get it after registering an OAuth application in your GitHub account
-GITHUB_CLIENT_SECRET => You get it after registering an OAuth application in your GitHub account
+- DATABASE_URL => A supabase database url
+- NEXTAUTH_SECRET => A random string (only needed for "production" environment)
+- NEXTAUTH_URL => http://localhost:3000
+- GITHUB_CLIENT_ID => You get it after registering an OAuth application in your GitHub account
+- GITHUB_CLIENT_SECRET => You get it after registering an OAuth application in your GitHub account
 
 ## Stack
 
