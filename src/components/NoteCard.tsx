@@ -24,9 +24,9 @@ export const NoteCard = ({
           } collapse`}
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          <div className="collapse-title text-xl font-bold">{note.title}</div>
+          <h2 className="collapse-title text-xl font-bold">{note.title}</h2>
           <div className="collapse-content">
-            <div className="lg:prose-xl prose">
+            <div className="prose lg:prose-xl">
               <ReactMarkdown>{note.content}</ReactMarkdown>
             </div>
           </div>
