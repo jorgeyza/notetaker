@@ -2,6 +2,7 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 
 import { api, RouterOutputs } from "~/utils/api";
+import { NoteEditor } from "./NoteEditor";
 
 type Topic = RouterOutputs["topic"]["getAll"][0];
 
@@ -21,7 +22,22 @@ export const Content: React.FC = () => {
 
   const createTopic = api.topic.create.useMutation({
     onSuccess: () => {
-      void refetchTopics();
+      refetchTopics();
+    },
+  });
+
+  const { data: notes, refetch: refetchNotes } = api.note.getAll.useQuery(
+    {
+      topicId: selectedTopic?.id ?? "",
+    },
+    {
+      enabled: sessionData?.user !== undefined && selectedTopic !== null,
+    }
+  );
+
+  const createNote = api.note.create.useMutation({
+    onSuccess: () => {
+      refetchNotes();
     },
   });
 
@@ -58,7 +74,17 @@ export const Content: React.FC = () => {
           }}
         />
       </div>
-      <div className="col-span-3"></div>
+      <div className="col-span-3">
+        <NoteEditor
+          onSave={({ title, content }) => {
+            createNote.mutate({
+              title,
+              content,
+              topicId: selectedTopic?.id ?? "",
+            });
+          }}
+        />
+      </div>
     </div>
   );
 };
