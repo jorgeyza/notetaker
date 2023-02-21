@@ -5,5 +5,5 @@ module.exports = {
     extend: {},
   },
   //@ts-ignore until daisyui types are added https://github.com/saadeghi/daisyui/pull/1469
-  plugins: ["@tailwindcss/typography", require("daisyui")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };
