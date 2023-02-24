@@ -1,5 +1,7 @@
 # Notetaker
 
+![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=notetaker)
+
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`. Based on this [video](https://www.youtube.com/watch?v=J1gzN1SAhyM)
 
 App for taking notes that are related to a topic the user creates. **Notes are written in markdown**. Used Supabase for the database(postgreSQL) and registered two GitHub OAuth applications (for local and production).
